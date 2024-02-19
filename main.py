@@ -9,6 +9,9 @@ from PIL import ImageFont
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from pathlib import Path
+
+logger = logging.getLogger('uvicorn')
+
 logging.info("Import library finished")
 
 # Define path
