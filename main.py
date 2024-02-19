@@ -27,14 +27,14 @@ def index():
 
 @app.get("/path_info")
 def index():
-    return {
-        path,
-        tmp_path,
-        assets_path,
-        graph_tmp_path,
-        font_assets_path,
-        frameimg_assets_path,
-    }
+    return [
+        {"path": path},
+        {"tmp_path": tmp_path},
+        {"assets_path": assets_path},
+        {"graph_tmp_path": graph_tmp_path},
+        {"font_assets_path": font_assets_path},
+        {"frameimg_assets_path": frameimg_assets_path}
+    ]
 
 # Font loader
 # Todo: Error handling
