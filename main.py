@@ -69,7 +69,7 @@ def genGraph():
     plt.fill_between(hours[19:], 0, 85, color='white')
 
     plt.subplots_adjust(left=0.05, right=0.995, bottom=0.2, top=0.995)
-    plt.savefig(graph_tmp_path)
+    plt.savefig(str(graph_tmp_path))
     plt.close()
 
 # Response image genelator
@@ -112,7 +112,7 @@ def genImg():
 
     ## グラフ
     genGraph()
-    graph_image = Image.open(graph_tmp_path)
+    graph_image = Image.open(str(graph_tmp_path))
     ### リサイズ→https://pynote.hatenablog.com/entry/pillow-resize
     def scale_to_width(img, width):
         height = round(img.height * width / img.width)
