@@ -25,6 +25,17 @@ def index():
     genImg()
     return FileResponse(path / Path("output.png"))
 
+@app.get("/path_info")
+def index():
+    return {
+        path,
+        tmp_path,
+        assets_path,
+        graph_tmp_path,
+        font_assets_path,
+        frameimg_assets_path,
+    }
+
 # Font loader
 # Todo: Error handling
 def font(family, size):
