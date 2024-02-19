@@ -72,6 +72,7 @@ def genGraph():
     plt.fill_between(hours[19:], 0, 85, color='white')
 
     plt.subplots_adjust(left=0.05, right=0.995, bottom=0.2, top=0.995)
+    logging.info("graph_tmp_path is:" + str(graph_tmp_path))
     plt.savefig(graph_tmp_path)
     plt.close()
 
