@@ -1,5 +1,6 @@
 import os
 import datetime
+import logging
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -8,21 +9,34 @@ from PIL import ImageFont
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from pathlib import Path
+logging.info("Import library finished")
 
 # Define path
+logging.info("Defining path...")
 path = Path(os.getcwd())
+logging.info("The root path is:" + str(path))
 tmp_path = path / Path("tmp/")
+logging.info("tmp_path is:" + str(tmp_path))
 assets_path = path / Path("assets/")
+logging.info("assets_path is:" + str(assets_path))
 graph_tmp_path = tmp_path / Path("graph.png")
+logging.info("graph_tmp_path is:" + str(graph_tmp_path))
 font_assets_path = assets_path / Path("fonts/")
+logging.info("font_assets_path is:" + str(font_assets_path))
 frameimg_assets_path = assets_path / Path("images/")
+logging.info("frameimg_assets_path is:" + str(frameimg_assets_path))
+logging.info("Done.")
 
 # Define FastAPI app
+logging.info("Defining FastAPI app...")
 app = FastAPI()
+logging.info("Done.")
 
 @app.get("/")
 def index():
+    logging.info("Access to root, Call genImg()")
     genImg()
+    logging.info("genImg() done. Sending response")
     return FileResponse(path / Path("output.png"))
 
 # Font loader
