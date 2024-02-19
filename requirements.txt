@@ -1,0 +1,6 @@
+fastapi
+fonttools
+matplotlib
+numpy
+pillow
+python-dateutil
